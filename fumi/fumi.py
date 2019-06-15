@@ -16,7 +16,7 @@ if __name__ == '__main__':
     margin_w = 20;
     margin_h = 15;
 
-    img = Image.open(os.path.dirname(os.path.abspath(__file__)) + "/sample1.png", "r");
+    img = Image.open(os.path.dirname(os.path.abspath(__file__)) + "/sample3.png", "r");
 
     for pos_x in range(0, 3):
         # 読み取るマスの左上位置 (x-coord)
@@ -34,4 +34,4 @@ if __name__ == '__main__':
             # -psm 8は1文字判定のフラグ
             result = pytesseract.image_to_string(crop, config="-psm 10", lang="eng+jpn");
 
-            print(result);
+            print(result, leftpos_x, leftpos_y, sep='\t');
