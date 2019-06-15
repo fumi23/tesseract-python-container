@@ -34,4 +34,4 @@ if __name__ == '__main__':
             # -psm 8は1文字判定のフラグ
             result = pytesseract.image_to_string(crop, config="-psm 10", lang="eng+jpn");
 
-            print(result, leftpos_x, leftpos_y, sep='\t');
+            print(result, end='\n' if pos_y == 2 else ',');
